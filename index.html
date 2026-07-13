@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>سياسة الخصوصية - DoseMate</title>
+  <meta name="description" content="سياسة الخصوصية لتطبيق DoseMate لإدارة الأدوية وتذكير الجرعات"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+    :root {
+      --primary: #4A90D9;
+      --primary-dark: #2C6FAC;
+      --primary-light: #EBF4FF;
+      --bg: #F5F8FF;
+      --card: #FFFFFF;
+      --text: #1A2340;
+      --text-secondary: #5A6A8A;
+      --border: #DDE8F5;
+      --accent: #2ECC8A;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #2C6FAC 0%, #4A90D9 50%, #7BB8F0 100%);
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, transparent 60%);
+    }
+    header .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    header .logo-icon {
+      width: 60px; height: 60px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      margin-bottom: 10px;
+    }
+    header p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+    .header-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 30px;
+      padding: 6px 18px;
+      color: #fff;
+      font-size: 0.88rem;
+      margin-top: 16px;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Wave divider */
+    .wave {
+      margin-top: -2px;
+      background: var(--bg);
+    }
+    .wave svg {
+      display: block;
+      width: 100%;
+    }
+
+    /* Main content */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 20px 20px 60px;
+    }
+
+    /* Info bar */
+    .info-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 36px;
+      background: var(--primary-light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 20px;
+    }
+    .info-chip {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.9rem;
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+    .info-chip span.dot {
+      width: 8px; height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Section cards */
+    .section-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px 32px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 16px rgba(74,144,217,0.06);
+      transition: box-shadow 0.3s ease;
+    }
+    .section-card:hover {
+      box-shadow: 0 6px 24px rgba(74,144,217,0.12);
+    }
+    .section-card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-icon {
+      width: 36px; height: 36px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .section-card p {
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    .section-card p:last-child { margin-bottom: 0; }
+
+    ul.policy-list {
+      list-style: none;
+      padding: 0;
+    }
+    ul.policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      font-size: 0.97rem;
+    }
+    ul.policy-list li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, #EBF4FF, #F0FFF8);
+      border: 1px solid var(--border);
+      border-right: 4px solid var(--primary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: linear-gradient(135deg, #2C6FAC, #4A90D9);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      color: white;
+      margin-top: 10px;
+    }
+    .contact-card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .contact-card p { color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+    .contact-card a {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 12px 28px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+      backdrop-filter: blur(5px);
+    }
+    .contact-card a:hover { background: rgba(255,255,255,0.28); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.7rem; }
+      .section-card { padding: 22px 20px; }
+      main { padding: 16px 14px 50px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">💊</div>
+  </div>
+  <h1>DoseMate</h1>
+  <p>تطبيق إدارة الأدوية وتذكير الجرعات</p>
+  <div class="header-badge">🔒 سياسة الخصوصية</div>
+</header>
+
+<div class="wave">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F5F8FF"/>
+  </svg>
+</div>
+
+<main>
+  <!-- Info bar -->
+  <div class="info-bar">
+    <div class="info-chip"><span class="dot"></span> آخر تحديث: يوليو 2026</div>
+    <div class="info-chip"><span class="dot"></span> النسخة: 1.0.0</div>
+    <div class="info-chip"><span class="dot"></span> تطبّق على: Android و iOS</div>
+  </div>
+
+  <!-- Introduction -->
+  <div class="section-card">
+    <h2><span class="section-icon">📋</span> مقدمة</h2>
+    <p>
+      يُقدّم تطبيق <strong>DoseMate</strong> خدمات إدارة الأدوية وتذكير الجرعات ومتابعة المؤشرات الحيوية للمستخدمين.
+      نحن نُدرك أهمية خصوصيتك ونلتزم بحماية بياناتك الشخصية.
+    </p>
+    <p>
+      تُوضّح هذه السياسة كيفية جمع المعلومات واستخدامها وحفظها ومشاركتها عند استخدامك لتطبيق DoseMate.
+      باستخدامك للتطبيق، فأنت توافق على الشروط الواردة في هذه السياسة.
+    </p>
+  </div>
+
+  <!-- Data Collected -->
+  <div class="section-card">
+    <h2><span class="section-icon">📊</span> البيانات التي نجمعها</h2>
+    <p>نجمع الأنواع التالية من البيانات لتشغيل التطبيق:</p>
+    <ul class="policy-list">
+      <li>الاسم والبريد الإلكتروني عند إنشاء الحساب</li>
+      <li>بيانات الأدوية والجرعات التي تُدخلها يدوياً</li>
+      <li>المؤشرات الحيوية (ضغط الدم، السكر، النبض، الوزن) التي تُسجّلها</li>
+      <li>جهات اتصال الطوارئ التي تضيفها</li>
+      <li>إعدادات التطبيق والتفضيلات الشخصية</li>
+      <li>سجلات الاستخدام لأغراض التحسين والدعم الفني</li>
+    </ul>
+    <div class="highlight-box">
+      🔒 <strong>لا نجمع</strong> أي بيانات طبية دقيقة من جهاز استشعار خارجي، ولا نشارك بياناتك مع أطراف ثالثة لأغراض تجارية.
+    </div>
+  </div>
+
+  <!-- How We Use Data -->
+  <div class="section-card">
+    <h2><span class="section-icon">⚙️</span> كيف نستخدم بياناتك</h2>
+    <p>نستخدم البيانات التي نجمعها للأغراض التالية فقط:</p>
+    <ul class="policy-list">
+      <li>تشغيل خدمة التذكير بمواعيد الأدوية</li>
+      <li>حفظ بياناتك ومزامنتها عبر أجهزتك المختلفة (عبر Firebase)</li>
+      <li>توليد تقارير الالتزام بالعلاج ومتابعة المؤشرات الحيوية</li>
+      <li>تحسين أداء التطبيق وتجربة المستخدم</li>
+      <li>الدعم الفني عند الحاجة</li>
+    </ul>
+  </div>
+
+  <!-- Storage & Security -->
+  <div class="section-card">
+    <h2><span class="section-icon">🛡️</span> تخزين البيانات وحمايتها</h2>
+    <p>
+      تُخزَّن بيانات حسابك ومزامنتك على خوادم <strong>Google Firebase</strong> المحمية بمعايير أمان عالية المستوى
+      وتشفير SSL/TLS. تُخزَّن البيانات المحلية على جهازك باستخدام قاعدة بيانات <strong>Hive</strong> المشفّرة.
+    </p>
+    <ul class="policy-list">
+      <li>تشفير البيانات أثناء النقل والتخزين</li>
+      <li>حماية الحساب بكلمة مرور وإمكانية تسجيل الدخول عبر Google</li>
+      <li>صلاحية الوصول محدودة بالمستخدم المصادَق عليه فقط</li>
+      <li>لا يتمكن أحد سواك من رؤية بياناتك الخاصة</li>
+    </ul>
+  </div>
+
+  <!-- Third Parties -->
+  <div class="section-card">
+    <h2><span class="section-icon">🔗</span> الأطراف الثالثة</h2>
+    <p>يستخدم التطبيق خدمات الأطراف الثالثة التالية:</p>
+    <ul class="policy-list">
+      <li><strong>Firebase (Google):</strong> التحقق من الهوية، قاعدة البيانات السحابية، المزامنة</li>
+      <li><strong>Google Sign-In:</strong> تسجيل الدخول السريع عبر حساب Google</li>
+    </ul>
+    <p>
+      يخضع كلٌّ من هؤلاء المزوّدين لسياسة خصوصية خاصة بهم. ننصحك بمراجعتها عند الحاجة.
+    </p>
+    <div class="highlight-box">
+      📌 <strong>لا نبيع بياناتك</strong> لأي طرف ثالث لأغراض تجارية أو إعلانية تحت أي ظرف.
+    </div>
+  </div>
+
+  <!-- Children -->
+  <div class="section-card">
+    <h2><span class="section-icon">👶</span> خصوصية الأطفال</h2>
+    <p>
+      لا يستهدف التطبيق الأطفال دون سن 13 عاماً ولا يجمع بيانات منهم عن قصد.
+      إذا اكتشفت أن طفلاً قدّم معلوماته، فيرجى التواصل معنا فوراً لحذفها.
+    </p>
+  </div>
+
+  <!-- User Rights -->
+  <div class="section-card">
+    <h2><span class="section-icon">✋</span> حقوق المستخدم</h2>
+    <p>يحق لك في أي وقت:</p>
+    <ul class="policy-list">
+      <li>الوصول إلى بياناتك الشخصية ومراجعتها</li>
+      <li>تعديل أو تصحيح معلوماتك من داخل التطبيق</li>
+      <li>حذف حسابك وجميع بياناتك بصورة نهائية</li>
+      <li>طلب نسخة من بياناتك</li>
+      <li>إيقاف المزامنة السحابية وحذف التطبيق</li>
+    </ul>
+    <p>لممارسة أيٍّ من هذه الحقوق، تواصل معنا عبر البريد الإلكتروني أدناه.</p>
+  </div>
+
+  <!-- Notifications -->
+  <div class="section-card">
+    <h2><span class="section-icon">🔔</span> الإشعارات</h2>
+    <p>
+      يطلب التطبيق إذن الإشعارات لإرسال تذكيرات مواعيد الأدوية. يمكنك تعطيل الإشعارات في إعدادات
+      التطبيق أو جهازك في أي وقت، دون أن يؤثر ذلك على وظائف التطبيق الأساسية.
+    </p>
+  </div>
+
+  <!-- Changes -->
+  <div class="section-card">
+    <h2><span class="section-icon">📝</span> التحديثات على هذه السياسة</h2>
+    <p>
+      قد نُحدّث هذه السياسة من وقت لآخر. عند إجراء تغييرات جوهرية، سنُخطرك عبر التطبيق.
+      يُشير تاريخ "آخر تحديث" في أعلى الصفحة إلى آخر نسخة سارية.
+      استمرارك في استخدام التطبيق بعد التحديث يعني قبولك للسياسة المُحدَّتها.
+    </p>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <h2>📬 تواصل معنا</h2>
+    <p>هل لديك استفسار حول سياسة الخصوصية؟ نحن هنا للمساعدة.</p>
+    <a href="mailto:support@dosemate.app">support@dosemate.app</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 DoseMate — جميع الحقوق محفوظة</p>
+  <p style="margin-top:6px;">سياسة الخصوصية — الإصدار 1.0.0</p>
+</footer>
+
+</body>
+</html>
